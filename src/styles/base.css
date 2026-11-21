@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  font-size: var(--fs-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+/* ===== 覆盖 Vant 主题变量 ===== */
+:root {
+  --van-primary-color: var(--green);
+  --van-success-color: var(--green);
+  --van-danger-color: var(--danger);
+  --van-text-color: var(--text);
+  --van-text-color-2: var(--text-2);
+  --van-border-color: var(--line);
+  --van-radius-md: var(--r-md);
+  --van-radius-lg: var(--r-lg);
+  --van-tabbar-height: 60px;
+  --van-tabbar-item-font-size: 12px;
+}
+
+/* ===== 覆盖 Element Plus 主题变量 ===== */
+:root {
+  --el-color-primary: var(--green);
+  --el-color-success: var(--green);
+  --el-color-danger: var(--danger);
+  --el-border-radius-base: var(--r-md);
+}

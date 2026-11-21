@@ -1,0 +1,52 @@
+/* ===== Design Tokens（对齐 DESIGN_SYSTEM.md） ===== */
+:root {
+  /* 颜色 */
+  --bg: #f5f8f4;
+  --surface: #ffffff;
+  --surface-2: #fbfcfa;
+  --green: #35a853;
+  --green-700: #27843f;
+  --green-100: #eaf5e8;
+  --orange: #f08a24;
+  --orange-700: #d9770f;
+  --orange-100: #fdf0e2;
+  --cream: #f7f3ec;
+  --price: #f05b45;
+  --text: #26352a;
+  --text-2: #8a948b;
+  --text-3: #a6b0a7;
+  --line: #e6edea;
+  --danger: #e5484d;
+  --info: #2e6be6;
+
+  /* 圆角 */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 20px;
+  --r-pill: 999px;
+
+  /* 阴影 */
+  --shadow-sm: 0 1px 2px rgba(16, 24, 20, 0.05);
+  --shadow: 0 4px 16px rgba(16, 24, 20, 0.06);
+  --shadow-lg: 0 12px 32px rgba(16, 24, 20, 0.1);
+
+  /* 间距（8px 网格） */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+
+  /* 字号 */
+  --fs-display: 40px;
+  --fs-h1: 28px;
+  --fs-h2: 22px;
+  --fs-h3: 18px;
+  --fs-body: 15px;
+  --fs-small: 13px;
+  --fs-caption: 12px;
+}

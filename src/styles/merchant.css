@@ -1,0 +1,996 @@
+/* ===== 商家工作台样式（对齐 merchant_console_prototype） ===== */
+.merchant-app {
+  --green: #18a957;
+  --green-dark: #128747;
+  --green-soft: #eaf8ef;
+  --ink: #1f2937;
+  --muted: #718096;
+  --line: #e8edf0;
+  --bg: #f4f6f8;
+  --white: #fff;
+  --orange: #f59e0b;
+  --blue: #3b82f6;
+  --purple: #8b5cf6;
+  --shadow: 0 3px 18px rgba(26, 50, 37, 0.045);
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 14px;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei',
+    sans-serif;
+}
+.merchant-app button {
+  cursor: pointer;
+  border: 0;
+  font: inherit;
+}
+.merchant-app input,
+.merchant-app select {
+  font: inherit;
+}
+
+/* ==== 侧栏 ==== */
+.merchant-app .sidebar {
+  width: 238px;
+  background: #fff;
+  position: fixed;
+  inset: 0 auto 0 0;
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+.merchant-app .brand {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  padding: 0 26px;
+  gap: 10px;
+  border-bottom: 1px solid var(--line);
+  font-size: 20px;
+  font-weight: 750;
+  color: #15934c;
+}
+.merchant-app .brand-mark {
+  width: 32px;
+  height: 32px;
+  background: var(--green);
+  border-radius: 11px 11px 11px 3px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 18px;
+}
+.merchant-app .nav {
+  padding: 20px 12px;
+  display: grid;
+  gap: 5px;
+}
+.merchant-app .nav button {
+  background: transparent;
+  color: #697586;
+  text-align: left;
+  padding: 13px 14px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+.merchant-app .nav button.active {
+  background: #eaf8ef;
+  color: var(--green-dark);
+  font-weight: 650;
+  border-left: 3px solid var(--green);
+}
+.merchant-app .nav-icon {
+  width: 20px;
+  text-align: center;
+  font-size: 17px;
+}
+.merchant-app .sidebar-bottom {
+  margin-top: auto;
+  padding: 14px 12px 22px;
+}
+.merchant-app .profile-mini {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  border-top: 1px solid var(--line);
+  color: #687385;
+}
+.merchant-app .avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #b7e4c7, #63b87c);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* ==== 主区 ==== */
+.merchant-app .main {
+  margin-left: 238px;
+  min-height: 100vh;
+}
+.merchant-app .topbar {
+  height: 76px;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  position: sticky;
+  top: 0;
+  z-index: 8;
+}
+.merchant-app .search {
+  width: 300px;
+  position: relative;
+}
+.merchant-app .search input {
+  width: 100%;
+  border: 1px solid #dfe5e9;
+  border-radius: 9px;
+  padding: 11px 14px 11px 38px;
+  outline: none;
+  background: #fff;
+}
+.merchant-app .top-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.merchant-app .icon-btn {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #fff;
+  color: #64748b;
+  position: relative;
+}
+.merchant-app .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--green);
+  border-radius: 50%;
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}
+.merchant-app .user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.merchant-app .user small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 3px;
+}
+.merchant-app .content {
+  padding: 28px 32px 42px;
+  max-width: 1600px;
+  margin: auto;
+}
+
+/* ==== 页头 ==== */
+.merchant-app .page-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+.merchant-app .page-head h1 {
+  margin: 0 0 7px;
+  font-size: 24px;
+  letter-spacing: -0.4px;
+}
+.merchant-app .page-head p {
+  margin: 0;
+  color: var(--muted);
+}
+.merchant-app .head-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* ==== 按钮 ==== */
+.merchant-app .btn {
+  padding: 10px 15px;
+  border-radius: 9px;
+  background: #fff;
+  border: 1px solid var(--line);
+  color: #4b5563;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 550;
+}
+.merchant-app .btn.primary {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+.merchant-app .btn.soft {
+  background: var(--green-soft);
+  color: var(--green-dark);
+  border-color: transparent;
+}
+.merchant-app .btn.small {
+  padding: 7px 10px;
+  font-size: 12px;
+}
+.merchant-app .btn.danger {
+  color: #dc5353;
+  background: #fff;
+  border-color: #f2d9d9;
+}
+
+/* ==== 卡片 ==== */
+.merchant-app .card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+  border: 1px solid #f0f2f4;
+}
+.merchant-app .grid {
+  display: grid;
+  gap: 18px;
+}
+.merchant-app .stats {
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 18px;
+}
+.merchant-app .stat {
+  position: relative;
+  overflow: hidden;
+}
+.merchant-app .stat-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+.merchant-app .stat-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 17px;
+}
+.merchant-app .stat-value {
+  font-size: 27px;
+  font-weight: 750;
+  margin: 17px 0 9px;
+  letter-spacing: -0.5px;
+}
+.merchant-app .stat-foot {
+  font-size: 12px;
+  color: var(--muted);
+}
+.merchant-app .up {
+  color: #159a52;
+  font-weight: 600;
+}
+.merchant-app .down {
+  color: #e17b46;
+}
+.merchant-app .overview-grid {
+  grid-template-columns: 1.55fr 1fr;
+  margin-bottom: 18px;
+}
+.merchant-app .card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.merchant-app .card-title h3 {
+  margin: 0;
+  font-size: 16px;
+}
+.merchant-app .card-title span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.merchant-app .chart-wrap {
+  height: 240px;
+  position: relative;
+}
+.merchant-app .chart-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.merchant-app .chart-svg text {
+  font-size: 11px;
+  fill: #8b96a5;
+}
+.merchant-app .legend {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  color: #6b7280;
+  font-size: 12px;
+  margin-top: 8px;
+}
+.merchant-app .legend i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+.merchant-app .quick-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.merchant-app .quick {
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink);
+  background: #fff;
+  text-align: left;
+}
+.merchant-app .quick:hover {
+  border-color: #a8dfbd;
+  background: #fbfefc;
+}
+.merchant-app .quick-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+}
+.merchant-app .quick strong {
+  font-size: 13px;
+  display: block;
+}
+.merchant-app .quick small {
+  font-size: 11px;
+  color: var(--muted);
+  display: block;
+  margin-top: 4px;
+}
+.merchant-app .bottom-grid {
+  grid-template-columns: 1.5fr 1fr;
+}
+
+/* ==== 表格 ==== */
+.merchant-app .table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.merchant-app .table th {
+  text-align: left;
+  background: #f8fafb;
+  color: #788493;
+  font-size: 12px;
+  font-weight: 550;
+  padding: 12px 10px;
+}
+.merchant-app .table td {
+  padding: 13px 10px;
+  border-bottom: 1px solid #eef1f3;
+  color: #4c5664;
+  font-size: 13px;
+}
+.merchant-app .table tr:last-child td {
+  border-bottom: 0;
+}
+.merchant-app .product-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.merchant-app .thumb {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #edf7e9;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  overflow: hidden;
+  flex: none;
+}
+.merchant-app .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.merchant-app .status {
+  font-size: 11px;
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: #eaf8ef;
+  color: #15934c;
+}
+.merchant-app .status.off {
+  background: #f1f3f5;
+  color: #7c8794;
+}
+.merchant-app .status.draft {
+  background: #fff4df;
+  color: #b7791f;
+}
+.merchant-app .harvest-list {
+  display: grid;
+  gap: 14px;
+}
+.merchant-app .harvest-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.merchant-app .harvest-row .thumb {
+  background: #f2f8ed;
+}
+.merchant-app .harvest-info {
+  flex: 1;
+}
+.merchant-app .harvest-info small {
+  color: var(--muted);
+  display: block;
+  margin-top: 3px;
+}
+.merchant-app .harvest-amount {
+  font-weight: 650;
+}
+.merchant-app .progress {
+  height: 6px;
+  background: #edf1f3;
+  border-radius: 9px;
+  margin-top: 7px;
+  overflow: hidden;
+}
+.merchant-app .progress span {
+  height: 100%;
+  display: block;
+  background: var(--green);
+  border-radius: 9px;
+}
+
+/* ==== 筛选 / 分段 ==== */
+.merchant-app .filters {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.merchant-app .filters input,
+.merchant-app .filters select {
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fff;
+  padding: 10px 12px;
+  color: #536071;
+  outline: none;
+}
+.merchant-app .segmented {
+  display: flex;
+  background: #f1f4f5;
+  padding: 4px;
+  border-radius: 10px;
+  gap: 3px;
+}
+.merchant-app .segmented button {
+  background: transparent;
+  color: #64748b;
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+.merchant-app .segmented button.active {
+  background: #fff;
+  color: var(--green-dark);
+  box-shadow: 0 1px 5px #0000000d;
+  font-weight: 650;
+}
+
+/* ==== 商品卡 ==== */
+.merchant-app .products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.merchant-app .product-card {
+  overflow: hidden;
+  padding: 0;
+}
+.merchant-app .product-visual {
+  height: 150px;
+  background: linear-gradient(135deg, #e6f5df, #f8f9ed);
+  display: grid;
+  place-items: center;
+  font-size: 66px;
+  position: relative;
+  overflow: hidden;
+}
+.merchant-app .product-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.merchant-app .product-visual .status {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.merchant-app .product-info {
+  padding: 16px;
+}
+.merchant-app .product-info h3 {
+  margin: 0 0 7px;
+  font-size: 15px;
+}
+.merchant-app .product-info p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+.merchant-app .product-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 12px;
+  color: #778392;
+}
+.merchant-app .product-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+.merchant-app .product-actions .btn {
+  flex: 1;
+  justify-content: center;
+}
+
+/* ==== 报表 ==== */
+.merchant-app .record-table {
+  overflow: auto;
+}
+.merchant-app .report-grid {
+  grid-template-columns: 1fr 1fr;
+}
+.merchant-app .report-card {
+  min-height: 300px;
+}
+.merchant-app .donut {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  position: relative;
+  margin: 16px auto;
+}
+.merchant-app .donut::after {
+  content: '';
+  position: absolute;
+  inset: 29px;
+  background: #fff;
+  border-radius: 50%;
+}
+.merchant-app .donut-labels {
+  display: grid;
+  gap: 10px;
+}
+.merchant-app .donut-labels div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #647080;
+}
+.merchant-app .bar-list {
+  display: grid;
+  gap: 15px;
+  margin-top: 20px;
+}
+.merchant-app .bar-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 60px;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+}
+.merchant-app .bar-row .progress {
+  margin: 0;
+  height: 9px;
+}
+
+/* ==== 店铺 ==== */
+.merchant-app .shop-layout {
+  grid-template-columns: 1fr 1fr;
+}
+.merchant-app .shop-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.merchant-app .shop-logo {
+  width: 62px;
+  height: 62px;
+  border-radius: 16px;
+  background: #eaf8ef;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  flex: none;
+}
+.merchant-app .shop-card h2 {
+  font-size: 18px;
+  margin: 0 0 7px;
+}
+.merchant-app .shop-card p {
+  margin: 0;
+  color: var(--muted);
+}
+.merchant-app .detail-list {
+  display: grid;
+  gap: 14px;
+}
+.merchant-app .detail {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.merchant-app .detail:last-child {
+  border-bottom: 0;
+}
+.merchant-app .detail label {
+  color: var(--muted);
+  flex: none;
+}
+.merchant-app .detail strong {
+  text-align: right;
+  word-break: break-word;
+}
+
+/* ==== 移动 ==== */
+.merchant-app .mobile-top,
+.merchant-app .mobile-nav {
+  display: none;
+}
+
+/* ==== 弹窗 ==== */
+.merchant-app .modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #1f293766;
+  z-index: 30;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.merchant-app .modal-backdrop.show {
+  display: flex;
+}
+.merchant-app .modal {
+  width: min(520px, 100%);
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 20px 60px #0002;
+  max-height: 86vh;
+  overflow-y: auto;
+}
+.merchant-app .modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.merchant-app .modal-head h3 {
+  margin: 0;
+}
+.merchant-app .close {
+  background: transparent;
+  font-size: 23px;
+  color: #8792a0;
+}
+.merchant-app .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.merchant-app .form-field {
+  display: grid;
+  gap: 7px;
+}
+.merchant-app .form-field.full {
+  grid-column: 1 / -1;
+}
+.merchant-app .form-field label {
+  font-size: 12px;
+  color: #657181;
+}
+.merchant-app .form-field input,
+.merchant-app .form-field select,
+.merchant-app .form-field textarea {
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 11px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+.merchant-app .modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+/* ==== Toast（全局，Teleport 到 body） ==== */
+.merchant-toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  background: #173b28;
+  color: #fff;
+  padding: 13px 18px;
+  border-radius: 10px;
+  z-index: 50;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.25s;
+  pointer-events: none;
+}
+.merchant-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==== 响应式 ==== */
+@media (max-width: 1100px) {
+  .merchant-app .sidebar {
+    width: 205px;
+  }
+  .merchant-app .main {
+    margin-left: 205px;
+  }
+  .merchant-app .content {
+    padding: 24px;
+  }
+  .merchant-app .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .merchant-app .overview-grid,
+  .merchant-app .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+  .merchant-app .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  .merchant-app {
+    font-size: 15px;
+  }
+  .merchant-app .sidebar,
+  .merchant-app .topbar {
+    display: none;
+  }
+  .merchant-app .main {
+    margin: 0;
+  }
+  .merchant-app .mobile-top {
+    height: 58px;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 17px;
+    position: sticky;
+    top: 0;
+    z-index: 8;
+  }
+  .merchant-app .mobile-brand {
+    font-weight: 750;
+    color: var(--green-dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .merchant-app .mobile-brand .brand-mark {
+    width: 27px;
+    height: 27px;
+    font-size: 15px;
+  }
+  .merchant-app .content {
+    padding: 20px 15px 95px;
+  }
+  .merchant-app .page-head {
+    display: block;
+    margin-bottom: 18px;
+  }
+  .merchant-app .page-head h1 {
+    font-size: 22px;
+  }
+  .merchant-app .page-head p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .merchant-app .head-actions {
+    margin-top: 15px;
+  }
+  .merchant-app .head-actions .btn {
+    flex: 1;
+    justify-content: center;
+  }
+  .merchant-app .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 11px;
+  }
+  .merchant-app .card {
+    padding: 16px;
+    border-radius: 14px;
+  }
+  .merchant-app .stat-value {
+    font-size: 23px;
+    margin: 13px 0 8px;
+  }
+  .merchant-app .stat-top {
+    font-size: 12px;
+  }
+  .merchant-app .stat-icon {
+    width: 33px;
+    height: 33px;
+  }
+  .merchant-app .overview-grid,
+  .merchant-app .bottom-grid,
+  .merchant-app .report-grid,
+  .merchant-app .shop-layout {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .merchant-app .quick-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 9px;
+  }
+  .merchant-app .quick {
+    padding: 12px;
+    gap: 9px;
+  }
+  .merchant-app .quick-icon {
+    width: 35px;
+    height: 35px;
+  }
+  .merchant-app .quick strong {
+    font-size: 12px;
+  }
+  .merchant-app .quick small {
+    font-size: 10px;
+  }
+  .merchant-app .chart-wrap {
+    height: 210px;
+  }
+  .merchant-app .bottom-grid .card {
+    overflow: hidden;
+  }
+  .merchant-app .table {
+    min-width: 560px;
+  }
+  .merchant-app .products-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .merchant-app .product-visual {
+    height: 115px;
+    font-size: 52px;
+  }
+  .merchant-app .product-info {
+    padding: 12px;
+  }
+  .merchant-app .product-info h3 {
+    font-size: 13px;
+  }
+  .merchant-app .product-actions {
+    flex-direction: column;
+  }
+  .merchant-app .product-actions .btn {
+    padding: 7px;
+  }
+  .merchant-app .filters input {
+    flex: 1;
+    min-width: 130px;
+  }
+  .merchant-app .filters select {
+    flex: 1;
+  }
+  .merchant-app .filters .segmented {
+    width: 100%;
+    overflow: auto;
+  }
+  .merchant-app .record-table {
+    margin: 0 -16px;
+  }
+  .merchant-app .report-card {
+    min-height: 260px;
+  }
+  .merchant-app .mobile-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 1px solid var(--line);
+    z-index: 15;
+    padding: 8px 5px calc(8px + env(safe-area-inset-bottom));
+    justify-content: space-around;
+  }
+  .merchant-app .mobile-nav button {
+    background: transparent;
+    color: #7b8795;
+    display: grid;
+    gap: 4px;
+    justify-items: center;
+    font-size: 10px;
+    padding: 3px 9px;
+  }
+  .merchant-app .mobile-nav button span {
+    font-size: 19px;
+  }
+  .merchant-app .mobile-nav button.active {
+    color: var(--green-dark);
+    font-weight: 650;
+  }
+  .merchant-app .mobile-nav button.active span {
+    background: #eaf8ef;
+    border-radius: 8px;
+    padding: 3px 10px;
+  }
+  .merchant-app .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .merchant-app .form-field.full {
+    grid-column: auto;
+  }
+  .merchant-app .modal {
+    padding: 19px;
+  }
+  .merchant-app .shop-card {
+    align-items: flex-start;
+  }
+  .merchant-app .bar-row {
+    grid-template-columns: 75px 1fr 50px;
+  }
+  .merchant-app .filters .btn {
+    padding: 9px 11px;
+  }
+  .merchant-app .stat {
+    min-height: 132px;
+  }
+}
+@media (max-width: 380px) {
+  .merchant-app .products-grid {
+    grid-template-columns: 1fr;
+  }
+  .merchant-app .quick-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .merchant-app .stat-value {
+    font-size: 21px;
+  }
+}

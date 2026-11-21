@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#eaf6e9">
+  <title>清新果园 · 我的</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <div class="status-bar"><span>9:41</span><span class="status-icons">▮▮▮　◉　▰</span></div>
+    <section class="profile-hero">
+      <div class="hero-bg"></div><div class="hero-glow"></div>
+      <div class="profile-row" role="button" tabindex="0" id="profileEntry" aria-label="个人资料">
+        <div class="avatar-wrap"><div class="avatar"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="23" r="12"/><path d="M10 55c2-13 11-20 22-20s20 7 22 20"/></svg></div><span class="avatar-edit">✎</span></div>
+        <div class="profile-text"><h1>果园漫游者</h1><p>欢迎来到清新果园 <span class="arrow">›</span></p><div class="profile-chip"><span class="leaf">❧</span> 与自然相遇，发现新鲜好味</div></div>
+        <button class="profile-arrow" aria-label="查看个人资料">›</button>
+      </div>
+      <div class="hero-deco deco-one">✦</div><div class="hero-deco deco-two">✧</div>
+    </section>
+    <section class="content">
+      <div class="section-heading"><div><h2>我的服务</h2><p>记录你的果园生活</p></div><span class="heading-leaf">❧</span></div>
+      <div class="service-list">
+        <button class="service-card" data-action="收藏" aria-label="我的收藏">
+          <div class="service-icon icon-favorite"><svg viewBox="0 0 48 48"><path d="M24 40 8.5 25.2C1 17.8 12 5.5 24 15.2 36 5.5 47 17.8 39.5 25.2Z"/></svg></div><div class="service-copy"><h3>我的收藏</h3><p>收藏喜欢的农产品与果园</p></div><span class="chevron">›</span>
+        </button>
+        <button class="service-card" data-action="留言" aria-label="我的留言">
+          <div class="service-icon icon-message"><svg viewBox="0 0 48 48"><path d="M8 10h32v24H21l-9 7v-7H8z"/><path d="M16 19h16M16 25h11"/></svg></div><div class="service-copy"><h3>我的留言</h3><p>查看咨询与互动记录</p></div><span class="chevron">›</span>
+        </button>
+        <button class="service-card merchant-card" data-action="商家申请" aria-label="申请成为商家">
+          <div class="service-icon icon-merchant"><svg viewBox="0 0 48 48"><path d="M7 20 11 9h26l4 11"/><path d="M8 20c0 5 8 5 8 0 0 5 8 5 8 0 0 5 8 5 8 0 0 5 8 5 8 0"/><path d="M11 23v17h26V23M18 40V28h12v12"/></svg></div><div class="service-copy"><h3>申请成为商家</h3><p>加入果园，让优质农产品被看见</p></div><span class="chevron">›</span><span class="merchant-badge">入驻</span>
+        </button>
+      </div>
+      <div class="bottom-note"><span class="note-leaf">✦</span><p>源自自然 · 健康美味</p><span>清新果园</span></div>
+    </section>
+  </main>
+  <nav class="bottom-nav" aria-label="主导航">
+    <button class="nav-item" data-nav="首页"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v11h-7v-7h-4v7H3z"/></svg></span><span>首页</span></button>
+    <button class="nav-item" data-nav="分类"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg></span><span>分类</span></button>
+    <button class="nav-item active" data-nav="我的"><span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-4 3-7 8-7s8 3 8 7"/></svg></span><span>我的</span></button>
+  </nav>
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal-backdrop" id="modal" hidden><div class="modal" role="dialog" aria-modal="true"><button class="modal-close" id="closeModal">×</button><div class="modal-symbol" id="modalSymbol">🌿</div><h3 id="modalTitle">个人资料</h3><p id="modalDesc">这里是原型交互提示。</p><button class="modal-confirm" id="modalConfirm">我知道了</button></div></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
